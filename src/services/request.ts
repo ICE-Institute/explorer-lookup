@@ -45,7 +45,7 @@ export async function request (obj: RequestParameters): Promise<string> {
     };
 
     request.open(obj.method || 'GET', url);
-
+    request.setRequestHeader("Authorization","");
     if (obj.body) {
       request.send(JSON.stringify(obj.body));
     } else {
